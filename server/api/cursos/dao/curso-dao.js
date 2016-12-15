@@ -9,7 +9,7 @@ cursoSchema.statics.getAll = () => {
   return new Promise((resolve, reject) => {
     let _query = {};
 
-    curso
+    Curso
       .find(_query)
       .exec((err, cursos) => {
         err ? reject(err)
@@ -39,7 +39,7 @@ cursoSchema.statics.removeById = (id) => {
       return reject(new TypeError('Id is not a valid string.'));
     }
 
-    curso
+    Curso
       .findByIdAndRemove(id)
       .exec((err, deleted) => {
         err ? reject(err)

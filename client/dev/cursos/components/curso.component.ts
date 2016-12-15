@@ -1,6 +1,7 @@
 import {
   Component,
-  Inject
+  Inject,
+  OnInit
 } from '@angular/core';
 
 import {
@@ -19,7 +20,7 @@ type Curso = {
   templateUrl: 'cursos/templates/curso.html',
   styleUrls: ['cursos/styles/curso.css']
 })
-export class CursoComponent {
+export class CursoComponent implements OnInit {
   title: string = `OOOHH`;
   cursos: Curso[] = [];
   cursoForm: Curso;
