@@ -1,0 +1,31 @@
+<div>
+  <form (submit)="add(cursoForm)">
+
+    <h1>{{title}}</h1>
+
+    <input type="text"
+           name="cursoTitulo"
+           [(ngModel)]="cursoForm.titulo"
+           placeholder="Titulo del cursops"
+           autofocus />
+
+    <input type="text"
+           name="cursoTitulo"
+           [(ngModel)]="cursoForm.descripcion"
+           placeholder="Descripcion del cursops"/>
+
+    <input type="number"
+           name="cursoDUracion"
+           [(ngModel)]="cursoForm.duracion"
+           placeholder="Duración del cursops"/>
+
+    <button type="submit">+</button>
+  </form>
+
+  <div>
+    <div *ngFor="let curso of cursos;"
+         (click)="remove(curso._id);">
+      <p>{{curso.titulo}}</p>
+    </div>
+  </div>
+</div>
